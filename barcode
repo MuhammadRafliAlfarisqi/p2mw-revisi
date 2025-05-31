@@ -1,0 +1,21 @@
+from blockchain import Blockchain
+import qrcode
+
+# Inisialisasi Blockchain
+rempah_chain = Blockchain()
+
+# Tambah batch produksi (contoh)
+rempah_chain.add_block("Batch 001 - Jahe bubuk 50kg - 26 Mei 2025")
+rempah_chain.add_block("Batch 002 - Kunyit bubuk 30kg - 27 Mei 2025")
+
+# Tampilkan isi Blockchain
+rempah_chain.display_chain()
+
+# Generate QR Code ke link (contoh link data)
+data_link = "https://github.com/bisnisrempah/batchdata"
+qr = qrcode.make(data_link)
+
+# Simpan QR Code sebagai gambar
+qr.save("qrcode_batch.png")
+
+print("QR Code berhasil dibuat. Silakan cek file qrcode_batch.png")
